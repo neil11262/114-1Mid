@@ -16,7 +16,7 @@ const server = http.createServer(function (request, response) {
       answer = 'index2.html輸出部分';
       break;
       default:
-      answer = 'error.html輸出的部分';
+      answer = 'error.html輸出部分';
       break;
       }
   response.setHeader('Content-Type', 'text/plain;charset=utf-8'); //設置回應頭編碼為utf-8，避免中文亂碼
