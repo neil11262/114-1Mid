@@ -23,6 +23,7 @@ const ejs = require('ejs');
 
 // path 模組：用於處理和解析文件路徑，提取副檔名
 const path = require('path');
+const { url } = require('inspector');
 
 // ==========================================
 // 創建並配置 HTTP 伺服器
@@ -43,8 +44,17 @@ http.createServer((req, res) => {
   let fileOtherFile = '';
 
   // Switch根據不同路由要寫的部分
-
-
+switch(req,url){
+  case'/':
+  filePath = './index.ejs';
+  break;
+  case'/calculator':
+  filePath = './index2.ejs';
+  break;
+  default:
+    filePath = './index3.ejs';
+    break;
+}
 
 
 
