@@ -9,14 +9,14 @@ const server = http.createServer(function (request, response) {
 
   // 請寫 switch完成各個收到不同的請求以及輸出不同的回應字串 (使用 switch)
   switch(url){
-    case'/':
-      answer = 'index.html輸出部分';
-      break;
-      case'/calculator':
-      answer = 'index2.html輸出部分';
-      break;
-      default:
-      answer = 'error.html輸出部分';
+    case'/': //當網址 (url) 等於根目錄 '/' 時
+      answer = 'index.html輸出部分'; // 設定要回應的內容為首頁資訊
+      break; //執行完後跳出 switch，避免繼續執行下面的程式碼
+      case'/calculator': //當網址 (url) 等於 '/calculator' 時
+      answer = 'index2.html輸出部分'; // 設定要回應的內容為計算機頁面資訊
+      break; //執行完後跳出 switch
+      default: // 當上面的 case 都不符合時
+      answer = 'error.html輸出部分'; // 設定要回應的內容為錯誤頁面
       break;
       }
   response.setHeader('Content-Type', 'text/plain;charset=utf-8'); //設置回應頭編碼為utf-8，避免中文亂碼
